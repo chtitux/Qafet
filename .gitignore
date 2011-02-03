@@ -10,6 +10,7 @@ ui_*.h
 # Debug and Release directories (created under Windows, not Linux)
 Debug/
 Release/
+/build/
 
 # .log files (usually created by QtTest - thanks to VestniK)
 *.log
@@ -18,7 +19,7 @@ Release/
 # NOTE: PROJECT is a your project's name, analog of PROJECT.exe in Linux
 *.exe
 *.dll
-PROJECT
+Qafet
 
 # Windows-specific files
 Thumbs.db
@@ -28,3 +29,11 @@ desktop.ini
 
 # Editors temporary files 
 *~
+
+# Makefiles
+Makefile*
+
+# Eclipse project files
+.project
+.cproject
+
