@@ -1,14 +1,20 @@
-#include <QtCore>
-#include <QApplication>
-#include <QPushButton>
+/*
+ * main.cpp
+ *
+ *  Created on: 22 avr. 2011
+ *      Author: chtitux
+ */
 
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
+ #include <QApplication>
 
-    QPushButton button("Hell world!");
-    button.show();
+#include "MainWindow.h"
 
+ int main(int argc, char *argv[])
+ {
 
-    return a.exec();
-}
+	QApplication app(argc, argv);
+	MainWindow mainWin;
+	mainWin.show();
+
+	return app.exec();
+ }
