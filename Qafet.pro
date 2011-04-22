@@ -3,11 +3,10 @@ TARGET = Qafet
 QT += core \
     gui \
     sql
-HEADERS += 
-SOURCES += src/main.cpp
+HEADERS += src/MainWindow.h
+SOURCES += 
 FORMS += 
 RESOURCES += 
-
 MOC_DIR = build
 OBJECTS_DIR = build
 RCC_DIR = build
