@@ -17,6 +17,10 @@
 #include <QToolBar>
 #include <QStatusBar>
 
+#include "ListAccountsWidget.h"
+#include "AccountModel.h"
+#include "AccountListView.h"
+
 class MainWindow: public QMainWindow {
 
 	Q_OBJECT
@@ -28,7 +32,7 @@ class MainWindow: public QMainWindow {
 		//void closeEvent(QCloseEvent *event);
 
 	private slots:
-		void newAccount();
+		//void newAccount();
 		//void updateStatusBar();
 		//void find();
 
@@ -45,8 +49,11 @@ class MainWindow: public QMainWindow {
 		QAction *exitAction;
 		QAction *aboutQtAction;
 
-		QList<QString> *accounts;
+		AccountModel *accountModel;
+		AccountListView *accountListView;
 
+		QList<QString> *accounts;
+		ListAccountsWidget *accountsWidget;
 };
 
 #endif /* MAINWINDOW_H_ */

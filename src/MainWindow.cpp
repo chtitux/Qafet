@@ -7,9 +7,16 @@
  #include <QApplication>
 
 #include "MainWindow.h"
+#include "ListAccountsWidget.h"
+#include "AccountModel.h"
+#include "AccountListView.h"
 
 MainWindow::MainWindow() {
+
 	accounts = new QList<QString>();
+	accountsWidget = new ListAccountsWidget();
+	accountModel = new AccountModel();
+	accountListView = new AccountListView(accountModel);
 
 	createActions();
 	createMenus();
@@ -17,6 +24,8 @@ MainWindow::MainWindow() {
 	//createToolBars();
 	createStatusBar();
 
+	//setCentralWidget(accountsWidget);
+	setCentralWidget(accountListView);
 }
 
 void MainWindow::createActions()
@@ -25,7 +34,7 @@ void MainWindow::createActions()
 	newAction = new QAction(tr("&New account"), this);
 
 	newAction->setShortcut(QKeySequence::New);
-	connect(newAction, SIGNAL(triggered()), this, SLOT(newAccount()));
+	connect(newAction, SIGNAL(triggered()), accountModel, SLOT(newAccount()));
 
 	aboutQtAction = new QAction(tr("About &Qt"), this);
 	aboutQtAction->setStatusTip(tr("Show the Qt library's About box"));
@@ -51,8 +60,9 @@ void MainWindow::createStatusBar()
 	statusBar()->showMessage(trUtf8("Qafet lancé"), 0);
 
 }
-
+/*
 void MainWindow::newAccount()
 {
 	accounts->append("theo");
 }
+*/
